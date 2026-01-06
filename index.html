@@ -3,16 +3,76 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My Visual Page</title>
+  <title>Studio</title>
   <style>
-    body { margin: 0; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif; }
+
     .hero{
+      position: relative;
       height: 100vh;
+      overflow: hidden;
       background: url("bg.jpg") center / cover no-repeat;
+    }
+
+    /* 어두운 필터(텍스트 잘 보이게) */
+    .overlay{
+      position:absolute; inset:0;
+      background: rgba(0,0,0,0.18);
+    }
+
+    .content{
+      position: relative;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      text-align: center;
+      color: white;
+    }
+
+    .content h1{
+      font-size: clamp(28px, 4vw, 56px);
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .content p{
+      margin: 0 0 22px;
+      font-size: clamp(14px, 2vw, 18px);
+      opacity: 0.9;
+    }
+
+    .product{
+      width: min(520px, 82vw);
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.35));
+    }
+
+    .badge{
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(6px);
     }
   </style>
 </head>
 <body>
-  <div class="hero"></div>
+  <section class="hero">
+    <div class="overlay"></div>
+
+    <div class="content">
+      <div>
+        <div class="badge">Korean Stillness</div>
+        <h1>정갈한 움직임</h1>
+        <p>한국화의 여백과 질감 위에, 제품의 텍스처를 얹습니다.</p>
+        <img class="product" src="product.png" alt="제품 이미지">
+      </div>
+    </div>
+  </section>
 </body>
 </html>
